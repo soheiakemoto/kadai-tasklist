@@ -32,6 +32,7 @@ public class IndexServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         EntityManager em = DBUtil.createEntityManager();
 
         List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class).getResultList();
